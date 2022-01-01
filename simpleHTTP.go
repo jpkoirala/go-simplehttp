@@ -22,6 +22,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	for k, v := range r.Header {
 		fmt.Fprintf(w, "Header[%q] = %q\n", k, v)
 	}
+	fmt.Fprintf(w, "Version = v2\n", r.Host)
 	fmt.Fprintf(w, "Host = %q\n", r.Host)
 	fmt.Fprintf(w, "RemoteAddr = %q\n", r.RemoteAddr)
 	if err := r.ParseForm(); err != nil {
